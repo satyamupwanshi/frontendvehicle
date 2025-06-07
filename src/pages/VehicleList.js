@@ -14,8 +14,10 @@ function VehicleList() {
     console.log(localStorage.getItem('token'));
 
 
-    axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles/', {
-      headers: token ? { Authorization: `Bearer ${token}` } : {}
+   axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles/', {
+    headers: {
+      Authorization: `Bearer ${token}`
+     }
     })
       .then(res => {
         setVehicles(res.data);
