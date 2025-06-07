@@ -11,6 +11,9 @@ function VehicleList() {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
+    console.log(localStorage.getItem('token'));
+
+
     axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles/', {
       headers: token ? { Authorization: `Bearer ${token}` } : {}
     })
