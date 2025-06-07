@@ -11,7 +11,7 @@ function VehicleList() {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    axios.get('http://localhost:8080/api/vehicles/', {
+    axios.get('https://beckendvehicle-byht.onrender.com/vehicles/', {
       headers: token ? { Authorization: `Bearer ${token}` } : {}
     })
       .then(res => {
@@ -52,7 +52,7 @@ function VehicleList() {
 
             {v.image && (
               <img
-                src={`http://localhost:8080/media/${v.image}`}
+                src={`https://beckendvehicle-byht.onrender.com/media/${v.image}`}
                 alt={v.title}
                 style={{
                   width: '300px',
