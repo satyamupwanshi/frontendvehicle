@@ -12,7 +12,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://beckendvehicle-byht.onrender.com/api/auth/login/', credentials);
+      const res = await axios.post('https://beckendvehicle-byht.onrender.com/api/auth/login', credentials);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('username', credentials.username);
       alert('Login successful');

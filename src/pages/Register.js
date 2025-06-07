@@ -15,7 +15,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://beckendvehicle-byht.onrender.com/api/auth/register/', formData);
+      await axios.post('https://beckendvehicle-byht.onrender.com/api/auth/register', formData);
       alert('Registered successfully. Please login.');
       window.location.href = '/login';
     } catch (err) {
