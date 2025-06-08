@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';  // ✅ For internal routing
+import { Link } from 'react-router-dom';  
+import './AuthPages.css';
 
 function Login() {
   const [credentials, setCredentials] = useState({ username: '', password: '' });
@@ -23,7 +24,8 @@ function Login() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className='auth-container'>
+      <div className='auth-box'>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -43,9 +45,10 @@ function Login() {
         <button type="submit">Login</button>
       </form>
 
-      <p style={{ marginTop: '20px' }}>
+      <p>
         Don't have an account? <Link to="/register">Sign up here</Link>
       </p>
+      </div>
     </div>
   );
 }

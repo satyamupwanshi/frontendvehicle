@@ -25,7 +25,8 @@ function Register() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className='auth-container'>
+      <div className='auth-box'>
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" name="username" placeholder="Username" onChange={handleChange} required /><br /><br />
@@ -33,6 +34,7 @@ function Register() {
         <input type="password" name="password" placeholder="Password" onChange={handleChange} required /><br /><br />
         <button type="submit">Register</button>
       </form>
+      </div>
     </div>
   );
 }
