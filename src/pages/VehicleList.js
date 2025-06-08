@@ -57,7 +57,7 @@ function VehicleList() {
 
             {v.image && (
               <img
-                src={`https://beckendvehicle-byht.onrender.com/uploads/${v.image}`}
+                src={v.image}
                 alt={v.title}
                 style={{
                   width: '300px',
