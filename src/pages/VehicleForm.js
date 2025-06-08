@@ -22,7 +22,7 @@ function VehicleForm() {
     formData.append('type', form.type);
     formData.append('image', form.image);
 
-    axios.post('https://beckendvehicle-byht.onrender.com/api/vehicles/', formData, {
+    axios.post('https://beckendvehicle-byht.onrender.com/api/vehicles', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${localStorage.getItem('token')}`,
