@@ -21,6 +21,7 @@ function BuySellHome() {
       <nav className="navbar">
         <div className="logo">Vroomle</div>
         <div className="nav-links">
+          {role === 'ADMIN' && <Link to="/admin" className="nav-link">Admin</Link>}
           {!token ? (
             <>
               <Link to="/login" className="nav-link">Login</Link>
