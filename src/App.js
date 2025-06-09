@@ -6,10 +6,13 @@ import BuySellHome from './pages/BuySellHome';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Logout from './pages/Logout';
+import AdminDashboard from './pages/AdminDashboard';
+import Header from './components/Header';
 
 function App() {
   return (
     <Router>
+      <Header/>
       <Routes>
         <Route path="/" element={<BuySellHome />} />
         <Route path="/vehicles" element={<VehicleList />} />
@@ -18,8 +21,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/signup" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </Router>
+    
   );
 }
 

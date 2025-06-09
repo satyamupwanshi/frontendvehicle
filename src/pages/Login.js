@@ -16,8 +16,10 @@ function Login() {
       const res = await axios.post('https://beckendvehicle-byht.onrender.com/api/auth/login', credentials);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('username', credentials.username);
+      localStorage.setItem('role', res.data.role);
       alert('Login successful');
       window.location.href = '/';
+      navigate('/');
     } catch (error) {
       alert('Invalid credentials');
     }
