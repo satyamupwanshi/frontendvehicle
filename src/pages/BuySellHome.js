@@ -7,6 +7,7 @@ function BuySellHome() {
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
   const navigate = useNavigate();
+  console.log(role);
 
   const handleSellClick = () => {
     if (token) {
