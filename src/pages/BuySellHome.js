@@ -5,6 +5,7 @@ import './BuySellHome.css';
 function BuySellHome() {
   const username = localStorage.getItem('username');
   const token = localStorage.getItem('token');
+  const role = localStorage.getItem('role');
   const navigate = useNavigate();
 
   const handleSellClick = () => {
