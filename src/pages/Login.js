@@ -19,7 +19,6 @@ function Login() {
       localStorage.setItem('role', res.data.role);
       alert('Login successful');
       window.location.href = '/';
-      navigate('/');
     } catch (error) {
       alert('Invalid credentials');
     }

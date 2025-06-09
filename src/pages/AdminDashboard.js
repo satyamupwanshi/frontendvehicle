@@ -6,7 +6,7 @@ function AdminDashboard() {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    axios.get('https://your-backend-url/api/admin/stats', {
+    axios.get('https:///beckendvehicle-byht.onrender.com/api/admin/stats', {
       headers: {
         Authorization: `Bearer ${token}`
       }
