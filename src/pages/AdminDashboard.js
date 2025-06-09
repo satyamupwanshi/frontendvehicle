@@ -4,6 +4,7 @@ import axios from 'axios';
 function AdminDashboard() {
   const [stats, setStats] = useState(null);
   const token = localStorage.getItem('token');
+  console.log(token);
 
   useEffect(() => {
     axios.get('https:///beckendvehicle-byht.onrender.com/api/admin/stats', {
