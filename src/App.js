@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Logout from './pages/Logout';
 import AdminDashboard from './pages/AdminDashboard';
 import Header from './components/Header';
+import UserDashboard from './pages/UserDashboard';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signup" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/my-vehicles" element={<UserDashboard />} />
       </Routes>
     </Router>
     
