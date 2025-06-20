@@ -5,7 +5,7 @@ function UserDashboard() {
   const [vehicles, setVehicles] = useState([]);
   const token = localStorage.getItem('token');
 
-  console.log(token) ;
+  console.log(token);
 
   useEffect(() => {
     axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles/my-vehicles', {

@@ -10,24 +10,19 @@ function VehicleList() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
+const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-    console.log(localStorage.getItem('token'));
+axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles', { headers })
+  .then(res => {
+    setVehicles(res.data);
+    setLoading(false);
+  })
+  .catch(err => {
+    console.error(err);
+    setError('Something went wrong while loading vehicles.');
+    setLoading(false);
+  });
 
-
-   axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles', {
-    headers: {
-      Authorization: `Bearer ${token}`
-     }
-    })
-      .then(res => {
-        setVehicles(res.data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setError('Something went wrong while loading vehicles.');
-        setLoading(false);
-      });
   }, []);
 
   const formatPrice = (price) => {
