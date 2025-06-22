@@ -8,7 +8,7 @@ function UserDashboard() {
   console.log(token);
 
   useEffect(() => {
-    axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles/my-vehicles', {
+    axios.get('https://beckendvehicle-byht.onrender.com/api/my-vehicles', {
       headers: {
         Authorization: `Bearer ${token}`
       }
