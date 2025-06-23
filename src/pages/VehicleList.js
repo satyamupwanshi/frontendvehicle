@@ -63,6 +63,26 @@ axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles', { headers })
                 }}
               />
             )}
+        
+            {localStorage.getItem("username") !== v.user?.username && (
+              <button
+                onClick={() => {
+                  axios.post('https://beckendvehicle-byht.onrender.com/api/chat/start', {
+                    vehicleId: v.id
+                  }, {
+                    headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+                  })
+                  .then(res => {
+                    const chatId = res.data;
+                    window.location.href = `/chat/${chatId}`;
+                  })
+                  .catch(err => alert("Couldn't start chat"));
+                }}
+                style={{ marginTop: '10px', padding: '8px 12px' }}
+              >
+                Chat with Seller
+              </button>
+            )}
           </div>
         );
       })}

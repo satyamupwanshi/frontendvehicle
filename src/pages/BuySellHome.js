@@ -32,6 +32,7 @@ function BuySellHome() {
           ) : (
             <>
               <span style={{ color: '#fff', marginRight: '10px' }}>Hi, {username}</span>
+              <Link to="/chats" className="nav-link">Chats</Link>
               <Link to="/my-vehicles" className="nav-link">My Dashboard</Link>
               <Link to="/logout" className="nav-link">Logout</Link>
             </>
