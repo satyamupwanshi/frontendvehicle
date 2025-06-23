@@ -66,22 +66,27 @@ axios.get('https://beckendvehicle-byht.onrender.com/api/vehicles', { headers })
         
             {localStorage.getItem("username") !== v.user?.username && (
               <button
-                onClick={() => {
-                  axios.post('https://beckendvehicle-byht.onrender.com/api/chat/start', {
-                    vehicleId: v.id
-                  }, {
-                    headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-                  })
-                  .then(res => {
-                    const chatId = res.data;
-                    window.location.href = `/chat/${chatId}`;
-                  })
-                  .catch(err => alert("Couldn't start chat"));
-                }}
-                style={{ marginTop: '10px', padding: '8px 12px' }}
-              >
-                Chat with Seller
-              </button>
+              onClick={() => {
+                const token = localStorage.getItem('token');
+                axios.post('https://beckendvehicle-byht.onrender.com/api/chat/start', {
+                  vehicleId: v.id,
+                  sellerId: v.user.id     // ✅ this is important!
+                }, {
+                  headers: { Authorization: `Bearer ${token}` }
+                })
+                .then(res => {
+                  const chatId = res.data;
+                  window.location.href = `/chat/${chatId}`; // navigate to chat room
+                })
+                .catch(err => {
+                  console.error(err);
+                  alert("Couldn't start chat. Make sure you're logged in.");
+                });
+              }}
+            >
+              Chat with Seller
+            </button>
+
             )}
           </div>
         );
